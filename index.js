@@ -1,13 +1,12 @@
 const express = require('express');
 const http = require('http');
-const socket = require('socket.io');
+const socketIo = require('socket.io');
 
 const app = express();
 const server = http.createServer(app);
 const io = socketIo(server);
-const UserService = require('./userService');
+const UserService = require('./UsersService');
 const userService = new UserService(); 
-
 
 app.use(express.static(__dirname + '/public'));
 
@@ -32,7 +31,7 @@ io.on('connection', (socket) => {
 		});
 	});
 	socket.on('message', (message) => {
-		const {name} = userService.getAllUsers(socket.id);
+		const {name} = userService.getUserById(socket.id);
 		socket.broadcast.emit('message', {
 			text: message.text,
 			from: name
@@ -40,5 +39,4 @@ io.on('connection', (socket) => {
 	});
 });
 
-server.listen(3000, () => console.log('listening on *: 3000');
-});
+server.listen(3000, () => console.log('listening on *: 3000'));
