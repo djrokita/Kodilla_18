@@ -11,7 +11,7 @@ const Message = props => (
 const MessageList = props => (
 	<div className={styles.MessageList}>
 	{
-		props.messages.map((item, i) {
+		props.messages.map((item, i) => {
 			return (
 				<Message
 					key={i}

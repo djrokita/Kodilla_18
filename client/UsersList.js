@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './UserList.css';
+import styles from './UsersList.css';
 
 const UserList = props => (
 	<div className={styles.Users}>
@@ -14,7 +14,7 @@ const UserList = props => (
 							{user.name}
 						</li>
 					);
-				});
+				})
 			}
 		</ul>
 	</div>
