@@ -25858,55 +25858,59 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 var MessageForm = function (_Component) {
-	_inherits(MessageForm, _Component);
+  _inherits(MessageForm, _Component);
 
-	function MessageForm(props) {
-		_classCallCheck(this, MessageForm);
+  function MessageForm(props) {
+    _classCallCheck(this, MessageForm);
 
-		var _this = _possibleConstructorReturn(this, (MessageForm.__proto__ || Object.getPrototypeOf(MessageForm)).call(this, props));
+    var _this = _possibleConstructorReturn(this, (MessageForm.__proto__ || Object.getPrototypeOf(MessageForm)).call(this, props));
 
-		_this.state = { text: '' };
-		return _this;
-	}
+    _this.state = { text: "" };
+    return _this;
+  }
 
-	_createClass(MessageForm, [{
-		key: 'handleSubmit',
-		value: function handleSubmit(e) {
-			e.preventDefault();
-			var message = {
-				from: this.props.name,
-				text: this.state.text
-			};
-			this.props.onMessageSubmit(message);
-			this.setState({ text: '' });
-		}
-	}, {
-		key: 'changeHandler',
-		value: function changeHandler(e) {
-			this.setState({ text: e.target.value });
-		}
-	}, {
-		key: 'render',
-		value: function render() {
-			var _this2 = this;
+  _createClass(MessageForm, [{
+    key: "handleSubmit",
+    value: function handleSubmit(e) {
+      e.preventDefault();
+      var message = {
+        from: this.props.name,
+        text: this.state.text
+      };
+      this.props.onMessageSubmit(message);
+      this.setState({ text: "" });
+    }
+  }, {
+    key: "changeHandler",
+    value: function changeHandler(e) {
+      this.setState({ text: e.target.value });
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this2 = this;
 
-			return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-				'form',
-				{ className: __WEBPACK_IMPORTED_MODULE_1__MessageForm_css___default.a.MessageForm, onSubmit: function onSubmit(e) {
-						return _this2.handleSubmit(e);
-					} },
-				__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', {
-					className: __WEBPACK_IMPORTED_MODULE_1__MessageForm_css___default.a.MessageInput,
-					placeholder: 'Message',
-					onChange: function onChange(e) {
-						return _this2.changeHandler(e);
-					},
-					value: this.state.text })
-			);
-		}
-	}]);
+      return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        "form",
+        {
+          className: __WEBPACK_IMPORTED_MODULE_1__MessageForm_css___default.a.MessageForm,
+          onSubmit: function onSubmit(e) {
+            return _this2.handleSubmit(e);
+          }
+        },
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", {
+          className: __WEBPACK_IMPORTED_MODULE_1__MessageForm_css___default.a.MessageInput,
+          placeholder: "Message",
+          onChange: function onChange(e) {
+            return _this2.changeHandler(e);
+          },
+          value: this.state.text
+        })
+      );
+    }
+  }]);
 
-	return MessageForm;
+  return MessageForm;
 }(__WEBPACK_IMPORTED_MODULE_0_react__["Component"]);
 
 var _default = MessageForm;
@@ -25916,13 +25920,13 @@ var _default = MessageForm;
 ;
 
 var _temp = function () {
-	if (typeof __REACT_HOT_LOADER__ === 'undefined') {
-		return;
-	}
+  if (typeof __REACT_HOT_LOADER__ === 'undefined') {
+    return;
+  }
 
-	__REACT_HOT_LOADER__.register(MessageForm, 'MessageForm', 'C:/Users/Krzych/Documents/Programowanie/Kodilla/WD 2017-08/18/client/MessageForm.js');
+  __REACT_HOT_LOADER__.register(MessageForm, "MessageForm", "C:/Users/Krzych/Documents/Programowanie/Kodilla/WD 2017-08/18/client/MessageForm.js");
 
-	__REACT_HOT_LOADER__.register(_default, 'default', 'C:/Users/Krzych/Documents/Programowanie/Kodilla/WD 2017-08/18/client/MessageForm.js');
+  __REACT_HOT_LOADER__.register(_default, "default", "C:/Users/Krzych/Documents/Programowanie/Kodilla/WD 2017-08/18/client/MessageForm.js");
 }();
 
 ;
@@ -25988,34 +25992,31 @@ exports.locals = {
 
 
 var Message = function Message(props) {
-	return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-		'div',
-		{ className: __WEBPACK_IMPORTED_MODULE_1__MessageList_css___default.a.Message },
-		__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-			'strong',
-			null,
-			props.from,
-			': '
-		),
-		__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-			'span',
-			null,
-			props.text
-		)
-	);
+  return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+    "div",
+    { className: __WEBPACK_IMPORTED_MODULE_1__MessageList_css___default.a.Message },
+    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+      "strong",
+      null,
+      props.from,
+      ": "
+    ),
+    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+      "span",
+      null,
+      props.text
+    )
+  );
 };
 
 var MessageList = function MessageList(props) {
-	return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-		'div',
-		{ className: __WEBPACK_IMPORTED_MODULE_1__MessageList_css___default.a.MessageList },
-		props.messages.map(function (item, i) {
-			return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Message, {
-				key: i,
-				from: item.from,
-				text: item.text });
-		})
-	);
+  return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+    "div",
+    { className: __WEBPACK_IMPORTED_MODULE_1__MessageList_css___default.a.MessageList },
+    props.messages.map(function (item, i) {
+      return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Message, { key: i, from: item.from, text: item.text });
+    })
+  );
 };
 
 var _default = MessageList;
@@ -26023,15 +26024,15 @@ var _default = MessageList;
 ;
 
 var _temp = function () {
-	if (typeof __REACT_HOT_LOADER__ === 'undefined') {
-		return;
-	}
+  if (typeof __REACT_HOT_LOADER__ === 'undefined') {
+    return;
+  }
 
-	__REACT_HOT_LOADER__.register(Message, 'Message', 'C:/Users/Krzych/Documents/Programowanie/Kodilla/WD 2017-08/18/client/MessageList.js');
+  __REACT_HOT_LOADER__.register(Message, "Message", "C:/Users/Krzych/Documents/Programowanie/Kodilla/WD 2017-08/18/client/MessageList.js");
 
-	__REACT_HOT_LOADER__.register(MessageList, 'MessageList', 'C:/Users/Krzych/Documents/Programowanie/Kodilla/WD 2017-08/18/client/MessageList.js');
+  __REACT_HOT_LOADER__.register(MessageList, "MessageList", "C:/Users/Krzych/Documents/Programowanie/Kodilla/WD 2017-08/18/client/MessageList.js");
 
-	__REACT_HOT_LOADER__.register(_default, 'default', 'C:/Users/Krzych/Documents/Programowanie/Kodilla/WD 2017-08/18/client/MessageList.js');
+  __REACT_HOT_LOADER__.register(_default, "default", "C:/Users/Krzych/Documents/Programowanie/Kodilla/WD 2017-08/18/client/MessageList.js");
 }();
 
 ;
@@ -26096,27 +26097,27 @@ exports.locals = {
 
 
 var UserList = function UserList(props) {
-	return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-		'div',
-		{ className: __WEBPACK_IMPORTED_MODULE_1__UsersList_css___default.a.Users },
-		__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-			'div',
-			{ className: __WEBPACK_IMPORTED_MODULE_1__UsersList_css___default.a.UsersOnline },
-			props.users.lenght,
-			' people online'
-		),
-		__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-			'ul',
-			{ className: __WEBPACK_IMPORTED_MODULE_1__UsersList_css___default.a.UserList },
-			props.users.map(function (user) {
-				return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-					'li',
-					{ id: user.id, className: __WEBPACK_IMPORTED_MODULE_1__UsersList_css___default.a.UserItem },
-					user.name
-				);
-			})
-		)
-	);
+  return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+    "div",
+    { className: __WEBPACK_IMPORTED_MODULE_1__UsersList_css___default.a.Users },
+    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+      "div",
+      { className: __WEBPACK_IMPORTED_MODULE_1__UsersList_css___default.a.UsersOnline },
+      props.users.lenght,
+      " people online"
+    ),
+    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+      "ul",
+      { className: __WEBPACK_IMPORTED_MODULE_1__UsersList_css___default.a.UserList },
+      props.users.map(function (user) {
+        return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          "li",
+          { id: user.id, className: __WEBPACK_IMPORTED_MODULE_1__UsersList_css___default.a.UserItem },
+          user.name
+        );
+      })
+    )
+  );
 };
 
 var _default = UserList;
@@ -26124,13 +26125,13 @@ var _default = UserList;
 ;
 
 var _temp = function () {
-	if (typeof __REACT_HOT_LOADER__ === 'undefined') {
-		return;
-	}
+  if (typeof __REACT_HOT_LOADER__ === 'undefined') {
+    return;
+  }
 
-	__REACT_HOT_LOADER__.register(UserList, 'UserList', 'C:/Users/Krzych/Documents/Programowanie/Kodilla/WD 2017-08/18/client/UsersList.js');
+  __REACT_HOT_LOADER__.register(UserList, "UserList", "C:/Users/Krzych/Documents/Programowanie/Kodilla/WD 2017-08/18/client/UsersList.js");
 
-	__REACT_HOT_LOADER__.register(_default, 'default', 'C:/Users/Krzych/Documents/Programowanie/Kodilla/WD 2017-08/18/client/UsersList.js');
+  __REACT_HOT_LOADER__.register(_default, "default", "C:/Users/Krzych/Documents/Programowanie/Kodilla/WD 2017-08/18/client/UsersList.js");
 }();
 
 ;
@@ -26206,51 +26207,51 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 var UserForm = function (_Component) {
-	_inherits(UserForm, _Component);
+  _inherits(UserForm, _Component);
 
-	function UserForm() {
-		_classCallCheck(this, UserForm);
+  function UserForm() {
+    _classCallCheck(this, UserForm);
 
-		var _this = _possibleConstructorReturn(this, (UserForm.__proto__ || Object.getPrototypeOf(UserForm)).call(this));
+    var _this = _possibleConstructorReturn(this, (UserForm.__proto__ || Object.getPrototypeOf(UserForm)).call(this));
 
-		_this.state = { name: '' };
-		return _this;
-	}
+    _this.state = { name: "" };
+    return _this;
+  }
 
-	_createClass(UserForm, [{
-		key: 'handleSubmit',
-		value: function handleSubmit(e) {
-			e.preventDefault();
-			this.props.onUserSubmit(this.state.name);
-		}
-	}, {
-		key: 'handleChange',
-		value: function handleChange(e) {
-			this.setState({ name: e.target.value });
-		}
-	}, {
-		key: 'render',
-		value: function render() {
-			var _this2 = this;
+  _createClass(UserForm, [{
+    key: "handleSubmit",
+    value: function handleSubmit(e) {
+      e.preventDefault();
+      this.props.onUserSubmit(this.state.name);
+    }
+  }, {
+    key: "handleChange",
+    value: function handleChange(e) {
+      this.setState({ name: e.target.value });
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this2 = this;
 
-			return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-				'form',
-				{ className: __WEBPACK_IMPORTED_MODULE_1__UserForm_css___default.a.UserForm, onSubmit: function onSubmit(e) {
-						return _this2.handleSubmit(e);
-					} },
-				__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', {
-					className: __WEBPACK_IMPORTED_MODULE_1__UserForm_css___default.a.UserInput,
-					placeholder: 'Write your nickname and press enter',
-					onChange: function onChange(e) {
-						return _this2.handleChange(e);
-					},
-					value: this.state.name
-				})
-			);
-		}
-	}]);
+      return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        "form",
+        { className: __WEBPACK_IMPORTED_MODULE_1__UserForm_css___default.a.UserForm, onSubmit: function onSubmit(e) {
+            return _this2.handleSubmit(e);
+          } },
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", {
+          className: __WEBPACK_IMPORTED_MODULE_1__UserForm_css___default.a.UserInput,
+          placeholder: "Write your nickname and press enter",
+          onChange: function onChange(e) {
+            return _this2.handleChange(e);
+          },
+          value: this.state.name
+        })
+      );
+    }
+  }]);
 
-	return UserForm;
+  return UserForm;
 }(__WEBPACK_IMPORTED_MODULE_0_react__["Component"]);
 
 var _default = UserForm;
@@ -26260,13 +26261,13 @@ var _default = UserForm;
 ;
 
 var _temp = function () {
-	if (typeof __REACT_HOT_LOADER__ === 'undefined') {
-		return;
-	}
+  if (typeof __REACT_HOT_LOADER__ === 'undefined') {
+    return;
+  }
 
-	__REACT_HOT_LOADER__.register(UserForm, 'UserForm', 'C:/Users/Krzych/Documents/Programowanie/Kodilla/WD 2017-08/18/client/UserForm.js');
+  __REACT_HOT_LOADER__.register(UserForm, "UserForm", "C:/Users/Krzych/Documents/Programowanie/Kodilla/WD 2017-08/18/client/UserForm.js");
 
-	__REACT_HOT_LOADER__.register(_default, 'default', 'C:/Users/Krzych/Documents/Programowanie/Kodilla/WD 2017-08/18/client/UserForm.js');
+  __REACT_HOT_LOADER__.register(_default, "default", "C:/Users/Krzych/Documents/Programowanie/Kodilla/WD 2017-08/18/client/UserForm.js");
 }();
 
 ;
