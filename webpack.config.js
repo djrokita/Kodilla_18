@@ -37,24 +37,15 @@ module.exports = {
     })
   ],
   module: {
-    rules: [
+    loaders: [
       {
         test: /\.js$/,
+        exclude: /(node_module)/,
         loader: "babel-loader"
       },
       {
         test: /\.css$/,
-        use: [
-          {
-            loader: "style-loader"
-          },
-          {
-            loader: "css-loader",
-            options: {
-              modules: true
-            }
-          }
-        ]
+        loader: "style-loader!css-loader" 
       }
     ]
   }
